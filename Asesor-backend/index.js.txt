@@ -1,0 +1,17 @@
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.post('/chat', (req, res) => {
+  const mensaje = req.body.mensaje || '';
+
+  res.json({
+    respuesta: 'Perfecto, cuéntame un poco más 🙂'
+  });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log('Backend activo en puerto ' + PORT);
+});
